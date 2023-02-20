@@ -1,0 +1,60 @@
+﻿<Page x:Class="PosPrintTest.BillingTemplate"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PosPrintTest"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="265"
+      Title="BillingTemplate">
+
+  <StackPanel>
+    <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" FontFamily="MS UI Gothic" FontWeight="UltraBold"><Run Language="ja-jp" Text="お会計票"/></TextBlock>
+    <Border BorderBrush="Black" BorderThickness="0,1,0,0" Height="1" Width="265"/>
+    <StackPanel Height="23" Orientation="Horizontal" HorizontalAlignment="Center">
+      <TextBlock Name="textBlock_transactionDate" VerticalAlignment="Center" TextWrapping="Wrap" Text="[transactionDate]" FontFamily="MS UI Gothic" FontWeight="UltraBold"/>
+      <TextBlock VerticalAlignment="Center" TextWrapping="Wrap" Text=" No." FontFamily="MS UI Gothic" FontWeight="UltraBold"/>
+      <TextBlock Name="textBlock_trasactionNumber" VerticalAlignment="Center" TextWrapping="Wrap" Text="[trasactionNumber]" FontFamily="MS UI Gothic" FontWeight="UltraBold"/>
+    </StackPanel>
+
+
+    <StackPanel Height="42" Orientation="Horizontal">
+      <Border BorderBrush="Black" BorderThickness="1,1,0,1" Width="88" CornerRadius="10,0,0,10">
+        <StackPanel>
+          <Grid Height="41">
+            <TextBox HorizontalAlignment="Left" Margin="10,-4,0,0" TextWrapping="Wrap" Text="テーブル" VerticalAlignment="Top" Width="87" BorderBrush="{x:Null}" TextBlock.FontFamily="MS UI Gothic" TextBlock.FontWeight="UltraBold"/>
+            <TextBlock Name="textBlock_tableName" HorizontalAlignment="Left" Margin="10,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" FontFamily="MS UI Gothic" FontWeight="UltraBold"><Run Language="ja-jp" Text="[tableName]"/><LineBreak/><Run Language="ja-jp"/></TextBlock>
+          </Grid>
+        </StackPanel>
+      </Border>
+      <Border BorderBrush="Black" BorderThickness="1" Width="89">
+        <StackPanel>
+          <Grid Height="41">
+            <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="MS UI Gothic" FontWeight="UltraBold"><Run Language="ja-jp" Text="人数"/></TextBlock>
+            <TextBlock Name="textBlock_numberOfPeple" HorizontalAlignment="Left" Margin="10,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="MS UI Gothic" FontWeight="UltraBold"><Run Language="ja-jp" Text="[numberOfPeple]"/></TextBlock>
+          </Grid>
+        </StackPanel>
+      </Border>
+      <Border BorderBrush="Black" BorderThickness="0,1,1,1" Width="88" CornerRadius="0,10,10,0">
+        <StackPanel>
+          <Grid Height="100">
+            <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="MS UI Gothic" FontWeight="UltraBold"><Run Language="ja-jp" Text="係"/></TextBlock>
+            <TextBlock Name="textBlock_chargeName" HorizontalAlignment="Left" Margin="10,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="MS UI Gothic" FontWeight="UltraBold"><Run Language="ja-jp" Text="[chargeName]"/></TextBlock>
+          </Grid>
+        </StackPanel>
+      </Border>
+    </StackPanel>
+
+    <DataGrid Name="dataGrid_orders" FontSize="12" HorizontalAlignment="Left" Canvas.Top="105" HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False" VerticalScrollBarVisibility="Disabled" BorderBrush="#7F000000" BorderThickness="1,1,1,1" Width="265"/>
+    <Grid Height="40">
+      <Border BorderBrush="Black" BorderThickness="1" CornerRadius="5,5,5,5">
+        <TextBlock Name="textBlock_totalAmount" TextWrapping="Wrap" Margin="79,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="MS UI Gothic" FontWeight="UltraBold"><Run Language="ja-jp" Text="[totalAmount]"/></TextBlock>
+      </Border>
+      <Border BorderBrush="Black" BorderThickness="0,0,1,0" Margin="0,0,185,0">
+        <TextBlock TextWrapping="Wrap" Margin="10,10,9,10" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="MS UI Gothic" FontWeight="UltraBold"><Run Language="ja-jp" Text="合　　計"/></TextBlock>
+      </Border>
+    </Grid>
+    <Image Name="image_qrCord" Height="100" Width="100"/>
+    <Image Name="image_logo" Source="\Assets\logo.bmp" Height="50" Width="125"/>
+  </StackPanel>
+</Page>

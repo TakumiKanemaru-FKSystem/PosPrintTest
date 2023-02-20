@@ -1,0 +1,19 @@
+﻿<Window x:Class="PosPrintTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:PosPrintTest"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+  <Grid>
+    <Menu materialDesign:MenuAssist.TopLevelMenuItemHeight="25">
+      <MenuItem Name="menuItem_billing" Header="Billing" Click="menuItem_billing_Click" />
+      <MenuItem Name="menuItem_payment" Header="Payment" Click="menuItem_payment_Click" />
+      <MenuItem Name="menuItem_settings" Header="Settings" Click="menuItem_settings_Click" />
+    </Menu>
+
+    <Frame Name="frame_main" Margin="0,24,0,0"/>
+  </Grid>
+</Window>

@@ -1,0 +1,49 @@
+﻿<Page x:Class="PosPrintTest.OriginalBillingTemplate"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PosPrintTest"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="265"
+      Title="OriginalBillingTemplate">
+  <StackPanel>
+    <Grid Height="80">
+      <TextBlock Name="textBlock_storeName" Text="[storeName]" FontSize="20" FontWeight="UltraBold" FontFamily="MS Gothic"/>
+
+      <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right">
+        <TextBlock HorizontalAlignment="Center" Text="担当印" FontSize="14" FontWeight="Bold"/>
+        <Rectangle Height="40" Width="40" Margin="10,10,10,10" Stroke="Black" />
+      </StackPanel>
+    </Grid>
+
+    <Grid Height="250">
+      <Border BorderBrush="Black" BorderThickness="1"/>
+      <Border BorderBrush="Black" BorderThickness="0,0,0,1" Margin="0,0,0,210"/>
+      <Border BorderBrush="Black" BorderThickness="0,0,1,0" Margin="0,0,225,0"/>
+      <Border BorderBrush="Black" BorderThickness="1,0,0,0" Margin="210,0,0,0"/>
+
+      <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="数" Margin="0,0,225,210" FontSize="14" FontWeight="Bold"/>
+      <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="メ ニ ュ ー 名" Margin="40,0,55,210" FontWeight="Bold" FontSize="14"/>
+      <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="金額" Margin="210,0,0,210" FontSize="14" FontWeight="Bold"/>
+
+      <TextBlock HorizontalAlignment="Right" Name="textBlock_quantities" Margin="0,40,232,0" Text="[quantity]" FontSize="14" FontWeight="Bold" Height="210" TextAlignment="Right"/>
+      <TextBlock Name="textBlock_productNames" Text="[productName]" Margin="45,40,55,0" FontWeight="Bold" FontSize="14"/>
+      <TextBlock HorizontalAlignment="Right" Name="textBlock_amounts" Text="[amount]" Margin="210,40,5,0" FontSize="14" FontWeight="Bold" TextAlignment="Right"/>
+    </Grid>
+
+    <Grid Height="40">
+      <Border BorderBrush="Black" BorderThickness="1,0,1,1" Margin="80,0,0,0"/>
+      <Border BorderBrush="Black" BorderThickness="1,0,0,0" Margin="160,0,0,0"/>
+
+      <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="合 計" Margin="80,0,105,0" FontSize="20" FontWeight="Bold"/>
+      <TextBlock Name="textBlock_totalAmount" HorizontalAlignment="Center" VerticalAlignment="Center" Text="[totalAmount]" Margin="160,0,0,0" FontSize="20" FontWeight="Bold"/>
+    </Grid>
+
+    <Grid Height="80">
+      <Image Name="image_qrCord" Width="75" Height="75" Margin="2,2,187,2" ToolTip="[qrCord]" />
+      <TextBlock Name="textBlock_transactionDate" HorizontalAlignment="Center" Margin="75,25,0,40" Text="[transactionDate]"/>
+      <TextBlock Name="textBlock_transactionTime" HorizontalAlignment="Center" Margin="75,41,0,24" Text="[transactionTime]"/>
+    </Grid>
+  </StackPanel>
+</Page>
